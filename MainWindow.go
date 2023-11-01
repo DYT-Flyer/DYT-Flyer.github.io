@@ -22,14 +22,14 @@ func buildWindow(myWindow fyne.Window, myApp fyne.App) *fyne.Container {
 	submitButton := widget.NewButton("Submit", func() {
 		userID = usernameEntry.Text
 		success := processAndStore()
-		//myWindow.Hide()
+		myWindow.Hide()
 		if success {
-			//showImageWindow(myApp)
+			showImageWindow(myApp)
 		} else {
 			customDialog := dialog.NewCustom("Error", "OK", widget.NewLabel("Name already exists"), myWindow)
 			customDialog.Show()
 		}
-		//myWindow.Show()
+		myWindow.Show()
 	})
 
 	label := widget.NewLabel("Enter your name above, then click submit. You will be shown a series of images " +
