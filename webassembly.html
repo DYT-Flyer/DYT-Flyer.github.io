@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebAssembly Demo</title>
+</head>
+<body>
+    <script>
+        var importObject = {
+            env: {
+                // Provide any necessary imports
+            }
+        };
+
+        fetch('./web/main.wasm').then(response =>
+            response.arrayBuffer()
+        ).then(bytes =>
+            WebAssembly.instantiate(bytes, importObject)
+        ).then(results => {
+            // Call exported functions with results.instance.exports.<function_name>
+        });
+    </script>
+</body>
+</html>
