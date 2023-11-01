@@ -1,0 +1,96 @@
+import {
+    "context"
+	"cloud.google.com/go/storage"
+	firebase "firebase.google.com/go"
+	"google.golang.org/api/option"
+}
+
+func initializeAppWithServiceAccount() (*firebase.App, error) {
+	opt := option.WithCredentialsFile("/Users/sherk/cps596/firebase-key.json")
+	app, err := firebase.NewApp(context.Background(), nil, opt)
+	return app, err
+}
+
+func initializeBucket() (*storage.BucketHandle, context.Context) {
+	ctx := context.Background()
+	app, err := initializeAppWithServiceAccount()
+	if err != nil {
+		log.Fatalf("error initializing app: %v\n", err)
+	}
+
+	client, err := app.Storage(ctx)
+	if err != nil {
+		log.Fatalf("error getting storage client: %v\n", err)
+	}
+
+	bucketName := "gs://cps596.appspot.com/"
+	bucket, err := client.Bucket(bucketName)
+	if err != nil {
+		log.Fatalf("error getting default bucket: %v\n", err)
+	}
+
+	return bucket, ctx
+}
+
+func getImg(bucket *storage.BucketHandle, ctx context.Context) []byte {
+	log.Default().Println("Getting image2")
+	imgRef := *bucket.Object("gs://cps596.appspot.com/simple/1-1.jpg")
+	log.Default().Println(imgRef)
+	log.Println("Before NewReader")
+	if ctx != nil {
+		log.Println("ctx is not nil")
+		log.Println(ctx)
+	}
+
+	rc, err := imgRef.NewReader(ctx)
+	log.Println("After NewReader")
+	log.Fatalf("Failed to read file: %v", err)
+	log.Default().Println("Getting image3.5")
+	if err != nil {
+		log.Fatalf("Failed to read file: %v", err)
+	}
+	defer rc.Close()
+	log.Default().Println("Getting image4")
+	data, err := io.ReadAll(rc)
+	if err != nil {
+		log.Fatalf("Failed to read file: %v", err)
+	}
+	log.Default().Println("Getting image5")
+	return data
+}
+
+func showImageWindow(myApp fyne.App) {
+	imageWindow := myApp.NewWindow("Image Window")
+	log.Default().Println("Initializing bucket")
+	bucket, ctx := initializeBucket()
+	log.Default().Println("Getting image")
+	imgRef := bucket.Object("simple/1-1.jpg")
+	a, err := imgRef.Attrs(ctx)
+	if err != nil {
+		log.Fatalf("Failed to get object attributes: %v", err)
+	}
+	log.Default().Println(a)
+	rc, err := imgRef.NewReader(ctx)
+	if err != nil {
+		log.Fatalf("Failed to create reader: %v", err)
+	}
+	defer rc.Close()
+	imgData, err := io.ReadAll(rc)
+	if err != nil {
+		log.Fatalf("Failed to read file: %v", err)
+	}
+	defer rc.Close()
+	imgReader := bytes.NewReader(imgData)
+	log.Default().Println("Decoding image")
+	img, err := png.Decode(imgReader)
+	log.Default().Println("Image decoded")
+	if err != nil {
+		log.Fatalf("Failed to decode image: %v", err)
+	}
+	log.Default().Println("Image decoded")
+	image := canvas.NewImageFromImage(img)
+	image.FillMode = canvas.ImageFillOriginal
+
+	imageWindow.SetContent(image)
+	imageWindow.Show()
+}
