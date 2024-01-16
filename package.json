@@ -1,0 +1,16 @@
+{
+  "name": "empty-step-eat-kj1ep",
+  "productName": "empty-step-eat-kj1ep",
+  "description": "My Electron application description",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "1.0.0",
+  "author": "sherk",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "27.1.3"
+  }
+}

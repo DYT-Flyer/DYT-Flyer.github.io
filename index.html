@@ -1,0 +1,84 @@
+User
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+  <link href="./style.css" rel="stylesheet">
+</head>
+
+  <body>
+    <script src="./renderer.js"></script>
+    <div class="background">
+<div id="tabs">
+    <button class="tab-link" data-target="#tab1">Tab 1</button>
+    <button class="tab-link" data-target="#tab2">Tab 2</button>
+    <button class="tab-link" data-target="#tab3">Tab 3</button>
+  </div>
+
+  <div class="tab-content" id="tab1">
+    <div class="phone-number" id="pn1"></div>
+    <div class="circle-container">
+      <div class="circle" id="circle1" data-value="1"></div>
+      <div class="circle" id="circle2" data-value="2"></div>
+      <div class="circle" id="circle3" data-value="3"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle" id="circle4" data-value="4"></div>
+      <div class="circle" id="circle5" data-value="5"></div>
+      <div class="circle" id="circle6" data-value="6"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle" id="circle7" data-value="7"></div>
+      <div class="circle" id="circle8" data-value="8"></div>
+      <div class="circle" id="circle9" data-value="9"></div>
+    </div>
+    <div class="circle-container">
+      <button class="circle" id="call" data-value="">Call</button>
+      <div class="circle" id="circle0" data-value="0"></div>
+      <button class="delete-button" id = "db1">Delete</button>
+    </div>
+  </div>
+
+  <div class="tab-content" id="tab2" style="display: none;">
+    <h2>Address Book</h2>
+    <table id="address-book">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Example contact -->
+        <tr class="contact-entry">
+        </tr>
+        <!-- Additional contacts would be added here -->
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tab-content" id="tab3" style="display: none;">
+    <h2>Add Contact</h2>
+    <form id="add-contact-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <button type="button" id="add-contact">Add Contact</button>
+    <button type="reset">Clear</button>
+    </form>
+  </div>
+  <script src="./renderer.js"></script>
+</html>
+    </div>
+  </body>
+
+  

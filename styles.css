@@ -1,0 +1,34 @@
+.tab-content {
+  display: none;
+}
+
+.active-tab {
+  display: block;
+}
+
+.circle-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Take full viewport height */
+  width: 100vw; /* Take full viewport width */
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  border-radius: 50%;
+  margin: 10px;
+  display: inline-block;
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+}
+
+.background {
+  min-height: 100vh; /* Minimum height so the gradient is visible */
+  background: linear-gradient(135deg, rgba(0, 255, 0, 0.5), rgba(0, 0, 255, 0.5)),
+              linear-gradient(225deg, rgba(255, 0, 0, 0.5), rgba(255, 255, 0, 0.5));
+  background-blend-mode: screen;
+}
+
+
