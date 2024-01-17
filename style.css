@@ -129,8 +129,9 @@ html, body {
 
 #address-book th,
 #address-book td {
-  color: rgba(27,27,27,1);
   text-align: center;
+  background-color: rgba(178,173,132,1);
+  color: rgba(27,27,27,1);
 }
 
 #address-book thead th {
