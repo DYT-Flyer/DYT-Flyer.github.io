@@ -1,0 +1,177 @@
+#tabs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tab-link {
+  padding: 10px 15px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  background-color: rgba(178,173,132,1);
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content:first-of-type {
+  display: block;
+}
+
+.active-tab {
+  display: block;
+}
+
+.circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.circle-and-delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.circle {
+  width: 60px;
+  height: 60px;
+  background-color:rgba(178,173,132,1);
+  border-radius: 100%;
+  display: inline-block;
+  cursor: pointer;
+  color: rbga(27,27,27,1);
+}
+
+.phone-number {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 200px;
+  height: 60px;
+  background-color:rgba(178,173,132,1);
+  border-radius: 8px;
+  cursor: pointer;
+  color: rgba(27,27,27,1);
+  text-align: center;
+  line-height: 60px;
+}
+
+.circle-container + .circle-container {
+  margin-top: 10px;
+}
+
+.delete-button {
+  background-color: rgba(178,173,132,1);
+  border: none;
+  color: rgba(27,27,27,1);
+  padding: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+  margin-left: 10px;
+}
+
+.pound-button {
+  background-color:white;
+  border: none;
+  color: white;
+  padding: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+  margin-left: 10px;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: rgb(228,2,43);
+  background: radial-gradient(circle, rgba(228,2,43,1) 0%, rgba(20,27,77,1) 78%);    
+  background-blend-mode: screen;
+}
+
+.phone-dialer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#phone-number-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+#address-book {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+#address-book th,
+#address-book td {
+  text-align: center;
+  background-color: rgba(178,173,132,1);
+  color: rgba(27,27,27,1);
+}
+
+#address-book thead th {
+  background-color: rgba(178,173,132,1);
+}
+
+h2 {
+  text-align: center;
+  color: rgba(27,27,27,1);
+}
+
+#add-contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+#add-contact-form label {
+  color: #FFF;
+  margin-bottom: 5px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.form-row label {
+  margin-right: 10px;
+}
+
+#add-contact-form input {
+  padding: 5px;
+}
+
+#add-contact-form .form-row button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+

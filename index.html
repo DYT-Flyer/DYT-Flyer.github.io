@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <link href="./style.css" rel="stylesheet">
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: #FF5733;
+            border: 1px solid black;
+            color: #806565;
+        }
+        .log {
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            min-height: 50px;
+            color: #806565;
+        }
+    </style>
+        }
+  </head>
+
+  <body>
+    <script src="./renderer.js"></script>
+    <div class="background">
+
+    <div id="tabs">
+      <button class="tab-link" data-target="#tab1">Dialer</button>
+      <button class="tab-link" data-target="#tab2">Contacts</button>
+      <button class="tab-link" data-target="#tab3">Add Contact</button>
+      <button class="tab-link" data-target="#tab4">Test Gestures</button>
+    </div>
+
+    <div class="tab-content" id="tab1">
+      <div class="phone-number" id="pn1"></div>
+
+      <div class="circle-container">
+        <button class="circle" id="circle1" data-value="1">1</button>
+        <button class="circle" id="circle2" data-value="2">2</button>
+        <button class="circle" id="circle3" data-value="3">3</button>
+      </div>
+
+      <div class="circle-container">
+        <button class="circle" id="circle4" data-value="4">4</button>
+        <button class="circle" id="circle5" data-value="5">5</button>
+        <button class="circle" id="circle6" data-value="6">6</button>
+      </div>
+
+      <div class="circle-container">
+        <button class="circle" id="circle7" data-value="7">7</button>
+        <button class="circle" id="circle8" data-value="8">8</button>
+        <button class="circle" id="circle9" data-value="9">9</button>
+      </div>
+
+      <div class="circle-container">
+        <button class="circle" id="call" data-value="">Call</button>
+        <button class="circle" id="circle0" data-value="0">0</button>
+        <button class="delete-button" id = "db1">Delete</button>
+      </div>
+    </div>
+
+    <div class="tab-content" id="tab2" style="display: none;">
+      <h2>Address Book</h2>
+      <table id="address-book">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="contact-entry">
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-content" id="tab3" style="display: none;">
+      <h2>Add Contact</h2>
+      <form id="add-contact-form">
+        <div class="form-row">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-row">
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-row">
+          <button type="button" id="add-contact">Add Contact</button>
+          <button type="reset">Clear</button>
+        </div>
+      </form>
+    </div>
+    <div class="tab-content" id="tab4" style="display: none;">
+      <div class="box"></div>
+      <div class="log"></div>
+    </div>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>
+  
+
+  
